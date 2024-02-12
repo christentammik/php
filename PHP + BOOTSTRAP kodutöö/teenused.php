@@ -63,7 +63,7 @@
         <h3>Teenuse kalkulaator</h3>
         <div class="mb-3"> 
           <label for="toode1" class="form-label">Hamburgerid</label>
-          <input type="number" class="form-control" id="toode1" name="toode1" max="200">
+          <input type="number" class="form-control" id="toode1" name="toode1">
         </div>
         <div class="mb-3"> <!-- Class mis on valitud bootstrapist -->
           <label for="toode2" class="form-label">Hot-dogid</label> <!-- toode2 tähistus -->
