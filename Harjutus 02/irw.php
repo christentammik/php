@@ -19,6 +19,69 @@
     </head>
 
     <body>
+    <div class="container">
+        <h1>Funktsioonid</h1>
+        <?php
+
+        function tervita($kasutaja = "anonüümne") {
+        echo "Tere $kasutaja!";
+        }
+
+        function tervita2() {
+            return "Tere Eesti";
+        }   
+
+        function uudiskiri() {
+            echo '<form action="uudiskiri.php" method="post">
+            <input type="email" name="email" id="email">
+            <input type="submit" value="Liitu uudiskirjaga">
+        </form>';
+        }
+        // HEAD MÕTTED
+        function headmotted(){
+            $alus = array("Mari", "Kati", "Kai");
+            $oeldis = array("kuulab","teeb","naudib");
+            $sihitis = array("autot","korvakiilu","ilma");
+
+            echo $alus[array_rand($alus)]." ".$oeldis[array_rand($oeldis)]." ".$sihitis[array_rand($sihitis)]."<br>";
+        }
+
+        headmotted();
+
+        tervita("Kati");
+        tervita();
+        echo tervita2(); 
+        uudiskiri();
+    
+
+    ?>
+    <h1>Tsüklid</h1>
+        <?php
+
+        for ($i=1; $i <= 100; $i++) { 
+            if ($i%10==0) {
+                # code...
+            echo $i. "<br>";
+            } else {
+                echo $i.". ";
+        }
+    }
+    echo "<br>-------------------------------------------<br>";
+    for ($i = 0; $i < 10; $i++) { 
+        echo "*";
+    }
+    echo "<br>-------------------------------------------<br>";
+    for ($i = 0; $i < 5; $i++) { 
+        for ($j = 0; $j < 5; $j++) { 
+            echo "*   ";
+        }
+        echo "<br>";
+    }
+    for ($i = 10; $i >= 1; $i--) { 
+        echo $i."<br>";
+    }
+
+?>
         <h1>Massiivid</h1>
         <?php
             $nimed = array("Mari", "Kati", "Kai", "Nui", "Maali", "Kertu", "Ints", "Ants");
@@ -76,7 +139,7 @@
         if (count($autod) == count($vinkoodid)) {
             echo "Autod (" . count($autod) . ") ja Vinid (" . count($vinkoodid) . ") klapivad";
         } else {
-            echo "Ei (" . count($autod) . ") ja Vinid (" . count($vinkoodid) . ") klapi";
+            echo "Ei (" . count($autod) . ") ja Vinid ei (" . count($vinkoodid) . ") klapi";
         }
         echo "<br> -------------------- <br>";
 
@@ -93,6 +156,7 @@
         echo "Toyotade arv: " . $toyotade_arv . "<br>";
         echo "Audide arv: " . $audide_arv . "<br>";
         echo "<br> -------------------- <br>";
+
         echo "<b>VIN koodid, mille märkide arv on väiksem kui 17:<br></b>";
         foreach ($vinkoodid as $vin) {
         if (strlen($vin) < 17) {
@@ -100,12 +164,14 @@
         }
         }
 
+        echo "<br> -------------------- <br>";
         $palgad = array(1220,1213,1295,1312,1298,1354,1296,1286,1292,1327,1369,1455);
-        $summa = 0;
+        $summa = array_sum($palgad);
+        $arv = count($palgad);
+        $keskmine_palk = $summa / $arv;
+        echo "Keskmine palk on: " . $keskmine_palk;
 
         ?>
-
-        <div class="container">
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
