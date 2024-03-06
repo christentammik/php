@@ -49,7 +49,7 @@
                       <li class="nav-item"><a class="nav-link" href="avaleht.html">Avaleht</a></li>
                       <li class="nav-item"><a class="nav-link" href="#">Tooted</a></li>
                       <li class="nav-item"><a class="nav-link" href="teenused.php">Teenused</a></li>
-                      <li class="nav-item"><button type="button" class="btn btn-primary">Kontakt</button></li>
+                      <li class="nav-item"><a href="kontakt.php" class="btn btn-primary" role="button">Kontakt</a></li>
                   </ul>
               </div>
           </nav>
