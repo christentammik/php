@@ -31,7 +31,7 @@
         <div class="row row-cols-1 row-cols-md-6 g-4 pt-4">
 
         <?php
-        if (isset($_GET["s"])) {
+        if (!empty($_GET["s"])) {
         $s = $_GET["s"];
         $paring = 'SELECT album, hind FROM albumid WHERE album LIKE "%'.$s.'%"';
         } else {
